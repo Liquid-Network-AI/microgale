@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "4000:4000"
+    environment:
+      - MIX_ENV=prod
+    volumes:
+      - ./backend:/app
+    command: ["mix", "phx.server"]
